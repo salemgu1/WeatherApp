@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+      <div id="weather-form">
+        <input type="text" id="input" placeholder="City" />
+        <button onclick=handleSearch()>search</button>
+      <div id="cities"></div>
+
+      <script id="cities-template" type="text/x-handlebars-template">
+          {{#each cities}}
+           <h2 class="city-name">{{name}}</h2>
+           <div class="city-temp">{{temperature}}</div>
+            <p class="name">{{condition}}</p>
+            <img src={{conditionPic}} width = "150" height = "150" alt="buttonpng" border="0" />
+            <button class="add-btn">Add</button>
+            <button class="remove-btn">Remove</button>
+           <!-- <p class="temp-icon">{{conditionPic}}</p> -->
+                      </div>
+          {{/each}}
+      </script>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="model.js"></script>
+    <script src="render.js"></script>
+
+    <script src="controller.js"></script>
+  </body>
+
+  </html>
